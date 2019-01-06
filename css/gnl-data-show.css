@@ -11,6 +11,7 @@
     border-collapse: collapse;
     box-sizing: border-box;
     color: #212529;
+    overflow: scroll;
 }
 
 .gnl-data-show thead {
@@ -55,5 +56,50 @@
 }
 .gnl-data-show  th.action-btn span:hover {
   cursor: pointer;
+
+}
+
+.gnl-data-show-menu {
+  margin-bottom: 5px;
+  padding: 5px;
+}
+.gnl-data-show-menu ul {
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'roboto', 'oxygen',  'Segoe UI', Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif';
+}
+.gnl-data-show-menu ul li {
+  margin:0;
+  padding: 0;
+}
+.gnl-data-show-menu ul li a, gnl-data-show-menu ul li a.page  {
+  font-family: inherit;
+  margin:0;
+  color: #fff;
+  text-decoration: none;
+  background-color: #6c757d;
+  border-color:solid 1px #6c757d;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  padding: 8px 12px;
+}
+.gnl-data-show-menu ul li a:hover {
+  background-color: #5a6268;
+  border-color: #545b62;  
+}
+.gnl-data-show-menu ul li:last-child a {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.gnl-data-show-menu ul li:first-child a {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.gnl-data-show-menu ul li .page:hover {
+  cursor: default !important;
+  background-color: #6c757d;
 
 }

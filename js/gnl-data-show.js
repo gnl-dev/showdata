@@ -10,36 +10,44 @@
  **************************************************/
 "use strict";
 
-/******************************
- * Show Data :
- * data_title = <table: title list>
- * data_list = <table: datas>
- * el = id html for table
- *  */
+let GnlTable = null;
+let GnlThead = null;
+let GnlTbody = null; 
+let GnlMenu = null;
 
-function GnlShowData(data_title,data_list,el=null) {
-  if(typeof(el) !== "string" || Array.isArray(data_title) == false || Array.isArray(data_list)==false) {
-    console.log("<Gnl: ShowData> Declaration is not correct");
-    return -1;
-  }
-  let str_el = el;
-  if((el = document.getElementById(el) || null) == null) {
-    console.log("<Gnl: ShowData> Opt.el is missing or not defined");
-    return -1;
+function GnlUpdateTitle(data_title,el) {
+  if(GnlTable == null)
+    return false;
+  if ( GnlThead !== null) {
+    GnlThead.remove();
+    GnlThead = null;
   }
 
-  // Setting main div
-  let table = document.createElement("table");
-  table.id = str_el + "gnl-table-auto";
-  if(document.getElementById(table.id)!== undefined) document.getElementById(table.id).remove();
-  table.className = "gnl-data-show";
+  GnlThead = document.createElement("thead");
   let str = `<thead><tr>`;
   for(let i=0;i<data_title.length;i++) {
     str+=`<th>${data_title[i]}</th>`;
   }
   str+=`<th class='action-btn'>Action</th>`;
   str+=`</tr></thead>`;
-  str += `<tbody>`
+  GnlThead.innerHTML = str;
+  if(GnlTable.firstChild !== null) {
+    GnlTable.insertBefore(GnlThead,GnlTable.firstChild);
+  }else GnlTable.appendChild(GnlThead);
+
+  return true;
+}
+
+function GnlUpdateData(data_list,el,page,size) {
+  if(GnlThead == null ||GnlTable == null)
+    return false;
+  if ( GnlTbody !== null) {
+    GnlTbody.remove();
+    GnlTbody = null;
+  }
+
+  GnlTbody = document.createElement("tbody");
+  let str=``;
   for(let i=0;i<data_list.length;i++) {
     str+=`<tr>`;
     for(let j=0;j<data_list[i].length;j++) {
@@ -49,11 +57,47 @@ function GnlShowData(data_title,data_list,el=null) {
     str+=`</tr>`;
   }
   str+=`</tbody>`;
-  table.innerHTML += str;
-  el.appendChild(table);
+  GnlTbody.innerHTML += str;
+  GnlTable.appendChild(GnlTbody);
+}
 
-  // Draw Navigation buttons
+function GnlUpdateMenu(el) {
+  if(GnlTable == null)
+    return false;
+  if(GnlMenu != null) {
+    GnlMenu.remove();
+    GnlMenu = null;
+  }
+  GnlMenu = document.createElement("div");
+  GnlMenu.className = "gnl-data-show-menu";
+  let str = `<ul>`;
+  str+=`<li><a href='#'>Precedent</a></li><li><a href='#' class='page'>1</a></li><li><a href='#'>Suivant</a></li>`;
+  str+=`</ul>`;
+  GnlMenu.innerHTML = str;
+  el.appendChild(GnlMenu);
+//  el.insertAdjacentElement('beforeend',GnlMenu);
+}
 
 
+function GnlShowData(data_title,data_list,el=null,page,nb) {
+  page = page || 1;
+  nb = nb || 10;
+
+  if(typeof(el) !== "string" || Array.isArray(data_title) == false || Array.isArray(data_list)==false) {
+    console.log("<Gnl: ShowData> Declaration is not correct");
+    return -1;
+  }
+
+  if((el = document.getElementById(el) || null) == null) {
+    console.log("<Gnl: ShowData> Opt.el is missing or not defined");
+    return -1;
+  }
+  if(GnlTable != null) GnlTable.remove();
+  GnlTable = document.createElement("table");
+  GnlTable.className="gnl-data-show";
+  GnlUpdateTitle(data_title,el);
+  GnlUpdateData(data_list,el,page,nb);
+  el.appendChild(GnlTable);
+  GnlUpdateMenu(el);
 
 }
