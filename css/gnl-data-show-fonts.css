@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "oxygen";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Oxygen.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "oxygen";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/OxygenBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Roboto.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "glyphicons";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/glyphicons.woff2") format("woff2");
+}

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+
+.gnl-data-show  {
+    font-family: -apple-system, BlinkMacSystemFont,'roboto', 'oxygen', 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    background: transparent;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    color: #212529;
+}
+
+.gnl-data-show thead {
+  text-align: left;
+  box-sizing: border-box;
+  font-family: inherit;
+  border-color: #32383E;
+  font-size: 16px;
+}
+.gnl-data-show thead tr {
+  color: #FFFFFF;
+  background: #212529;
+  border-bottom: 2px solid #dee2e6;
+}
+.gnl-data-show thead th {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.gnl-data-show tbody tr {
+  color: inherit;
+  background: transparent;
+  border-bottom: 1px solid #dee2e6;
+}
+.gnl-data-show tbody th {
+  padding: 10px;
+  text-align: left;
+  font-weight: 400;
+}
+.gnl-data-show tbody tr:nth-of-type(2n) {
+  background-color: #f1f3fa;
+}
+.gnl-data-show  th.action-btn {
+  text-align: center !important;
+  width: 70px;
+  font-size: 16px;
+  text-align: center !important;
+}
+.gnl-data-show  th.action-btn span::before {
+  content: "\e019";
+  font-family: "glyphicons" !important ;
+}
+.gnl-data-show  th.action-btn span:hover {
+  cursor: pointer;
+
+}
