@@ -50,56 +50,81 @@
   font-size: 16px;
   text-align: center !important;
 }
-.gnl-data-show  th.action-btn span::before {
-  content: "\e019";
+.gnl-data-show  th.action-btn span.delete::before {
+  content: "\e020";
   font-family: "glyphicons" !important ;
 }
-.gnl-data-show  th.action-btn span:hover {
+.gnl-data-show  th.action-btn span.editer::before {
+  content: "\270f";
+  font-family: "glyphicons" !important ;
+}
+.gnl-data-show th.action-btn span {
+  margin-left: 10px;
+}
+.gnl-data-show  th.action-btn span {
   cursor: pointer;
-
 }
 
 .gnl-data-show-menu {
   margin-bottom: 5px;
   padding: 5px;
-}
-.gnl-data-show-menu ul {
-  list-style: none;
-  margin: 0;
-  padding:0;
   display: flex;
   flex-direction: row-reverse;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, 'roboto', 'oxygen',  'Segoe UI', Cantarell, 'Open Sans', 'Helvetica Neue', 'sans-serif';
 }
-.gnl-data-show-menu ul li {
-  margin:0;
-  padding: 0;
-}
-.gnl-data-show-menu ul li a, gnl-data-show-menu ul li a.page  {
+.gnl-data-show-menu label {
+  border:solid 1px #545b62; 
   font-family: inherit;
   margin:0;
   color: #fff;
   text-decoration: none;
   background-color: #6c757d;
-  border-color:solid 1px #6c757d;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   padding: 8px 12px;
 }
-.gnl-data-show-menu ul li a:hover {
-  background-color: #5a6268;
-  border-color: #545b62;  
+.gnl-data-show-menu label:hover {
+  background-color: #545b62;
+  border-color: #545b62;
+  cursor: pointer;
 }
-.gnl-data-show-menu ul li:last-child a {
+.gnl-data-show-menu label:last-child  {
+  border-right: none;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
-.gnl-data-show-menu ul li:first-child a {
+.gnl-data-show-menu label:first-child  {
+  border-left: none;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
-.gnl-data-show-menu ul li .page:hover {
+.gnl-data-show-menu .static:hover {
   cursor: default !important;
-  background-color: #6c757d;
+}
+.gnl-data-show-menu .primary {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+.gnl-data-show-menu .primary:hover {
+  color: #0062cc;
+  background-color: #FFF;
+  border-color: #005cbf;
+}
+.gnl-data-show-menu .menu-suivant::before {
+  content: "\e075";
+  font-family: "glyphicons";
+}
 
+.gnl-data-show-menu .menu-precedent::before {
+  content: "\e071";
+  font-family: "glyphicons";
+}
+.gnl-data-show-menu .menu-ajouter::before {
+  content: "\002b";
+  font-family: "glyphicons";
+}
+.gnl-data-show-menu .menu-save::before {
+  content: "\e013";
+  font-family: "glyphicons";
 }

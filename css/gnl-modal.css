@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+.gnl-modal-bg {
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  font-family: -apple-system, BlinkMacSystemFont,'roboto', 'oxygen', 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.gnl-modal-bg > div {
+  margin: 20px auto 0 auto;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.gnl-modal-bg > div .title {
+  background: #007bff;
+  text-align: left;
+  align-items: center;
+  padding: 10px 8px;
+  color: #FFFFFF;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-weight: 700;
+}
+
+.gnl-modal-bg > div .body {
+  background: #FFFFFF;
+  align-items: center;
+  padding: 10px 8px;
+  color: #203a45;
+  min-height: 100px;
+}
+.gnl-modal-bg > div .body span {
+  margin-bottom: 5px;
+  font-weight: 700;
+  display: block;
+  font-size: 16px;
+}
+.gnl-modal-bg > div .body input {
+  font-size: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 5px 1px rgba(229, 229, 229, 0.5);
+  display: block;
+  padding: 8px 5px;
+  color: #999999;
+  background: #FFFFFF;
+  border: solid 1px #E5E5E5;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.gnl-modal-bg > div .body input:focus {
+  color: #999999;
+  background-color: #fff;
+  border-color: #6697fb;
+  outline: 0;
+}
+.gnl-modal-bg > div .footer {
+  padding: 10px 8px;
+  border-top: solid 1px #E9ECEF;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  display: flex;
+  flex-direction: row-reverse;
+  box-sizing: border-box;
+}
+
+.gnl-modal-bg .footer {
+  display: inline-block;
+  text-align: center;
+  border: solid 1px transparent;
+  padding: 6px 12px;
+  background: #FFFFFF;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+}
+.footer span {
+  margin-left: 10px;
+  display: inline-block;
+  text-align: center;
+  border: solid 1px transparent;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+span.primary {
+  cursor: pointer;
+  color: #FFFFFF;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+span.primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+span.close {
+  cursor: pointer;
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+span.close:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
